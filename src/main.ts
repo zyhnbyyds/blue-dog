@@ -1,19 +1,19 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
+import { NestFactory } from '@nestjs/core'
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
+import { AppModule } from './app.module'
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule)
 
   const config = new DocumentBuilder()
     .setTitle('一只忧伤的狗')
     .setDescription('想变成一只会飞的猪，怎末办啊😕')
     .setVersion('0.0.1')
-    .build();
+    .build()
 
-  const swagger = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('apidocs', app, swagger);
+  const swagger = SwaggerModule.createDocument(app, config)
+  SwaggerModule.setup('apidocs', app, swagger)
 
-  await app.listen(3000);
+  await app.listen(3000)
 }
-bootstrap();
+bootstrap()
