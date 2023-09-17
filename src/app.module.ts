@@ -11,8 +11,6 @@ import { UserModule } from './user/user.module'
 import { AuthModule } from './auth/auth.module'
 import { RoleModule } from './role/role.module'
 
-// NRpBXe1cYKLQEcLu yujiezhang
-
 @Module({
   imports: [
     MongooseModule.forRoot('mongodb://127.0.0.1:27017/test'),
