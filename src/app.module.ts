@@ -4,12 +4,7 @@ import { ApolloDriver } from '@nestjs/apollo'
 import { MongooseModule } from '@nestjs/mongoose'
 import { GraphQLModule } from '@nestjs/graphql'
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default'
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
-import { DatabaseModule } from './database/database.module'
-import { UserModule } from './user/user.module'
-import { AuthModule } from './auth/auth.module'
-import { RoleModule } from './role/role.module'
+import { AppResolver } from './app.resolver'
 
 @Module({
   imports: [
@@ -21,12 +16,7 @@ import { RoleModule } from './role/role.module'
       sortSchema: true,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
-    DatabaseModule,
-    UserModule,
-    AuthModule,
-    RoleModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  providers: [AppResolver],
 })
 export class AppModule {}
