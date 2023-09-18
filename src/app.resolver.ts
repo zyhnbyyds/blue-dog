@@ -6,4 +6,9 @@ export class AppResolver {
   sayHello(): string {
     return 'Hello World!'
   }
+
+  @Query(() => Number)
+  sayAge(): number {
+    return 111
+  }
 }
