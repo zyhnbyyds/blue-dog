@@ -2,5 +2,11 @@
   "extends": "@antfu",
   "rules": {
     "n/prefer-global/process": ["error", "always"]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["types/*.d.ts"],
+      "extends": "@antfu"
+    }
+  ]
 }

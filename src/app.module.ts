@@ -5,7 +5,9 @@ import { MongooseModule } from '@nestjs/mongoose'
 import { GraphQLModule } from '@nestjs/graphql'
 import { ConfigModule } from '@nestjs/config'
 import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin/landingPage/default'
+import { commonConfig, graphqlConfig, mongoConfig, ridesConfig, swaggerConfig } from '../config'
 import { AppResolver } from './app.resolver'
+import { isDev } from './utils/isDev'
 import { envValidate } from '@/validate/env'
 
 @Module({
@@ -19,7 +21,8 @@ import { envValidate } from '@/validate/env'
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
     ConfigModule.forRoot({
-      envFilePath: ['.env', '.env.prod', '.env.dev'],
+      envFilePath: isDev(),
+      load: [commonConfig, ridesConfig, mongoConfig, graphqlConfig, swaggerConfig],
       validationSchema: envValidate,
     }),
   ],
