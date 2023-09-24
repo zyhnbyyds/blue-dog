@@ -21,7 +21,7 @@ const logger = createLogger({
     timestamp({ format: 'YYYY/MM/DD HH:mm:ss' }),
     myFormat,
   ),
-  defaultMeta: { service: 'user-service' },
+
   transports: [
     new transports.Console({ debugStdout: true }),
     new transports.File({ filename: 'logs/error.log', level: 'error' }),

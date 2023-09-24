@@ -1,0 +1,6 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "n/prefer-global/process": ["error", "always"]
+  }
+}
