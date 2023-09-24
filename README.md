@@ -4,7 +4,7 @@
 
 ### TODO
 
-- add nest/config. (.env...)
+- ~~🎉 add nest/config. (.env...)~~
 - add fliters. eg: http & res handle
 - add base init template(like quick crud)
 - add user module
