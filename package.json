@@ -8,7 +8,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=prod nest build",
     "start": "cross-env NODE_ENV=env nest start",
-    "dev": "cross-env NODE_ENV=dev nest start --watch --preserveWatchOutput --watchAssets",
+    "dev": "cross-env NODE_ENV=dev nest start --watch",
     "dev:debug": "nest start --debug --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

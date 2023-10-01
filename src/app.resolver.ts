@@ -7,8 +7,8 @@ export class AppResolver {
     return 'Hello World!'
   }
 
-  @Query(() => Number)
-  sayAge(): number {
-    return 111
+  @Query(() => String)
+  sayAge(): string {
+    return '18岁'
   }
 }

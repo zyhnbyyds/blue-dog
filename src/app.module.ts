@@ -8,6 +8,7 @@ import { ApolloServerPluginLandingPageLocalDefault } from '@apollo/server/plugin
 import { commonConfig, graphqlConfig, mongoConfig, ridesConfig, swaggerConfig } from '../config'
 import { AppResolver } from './app.resolver'
 import { isDev } from './utils/isDev'
+import { CommonModule } from './common/common.module'
 import { envValidate } from '@/validate/env'
 
 @Module({
@@ -19,12 +20,14 @@ import { envValidate } from '@/validate/env'
       playground: false,
       sortSchema: true,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
+
     }),
     ConfigModule.forRoot({
       envFilePath: isDev(),
       load: [commonConfig, ridesConfig, mongoConfig, graphqlConfig, swaggerConfig],
       validationSchema: envValidate,
     }),
+    CommonModule,
   ],
   providers: [AppResolver],
 })
